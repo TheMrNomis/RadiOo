@@ -4,6 +4,8 @@
 int main()
 {
     sf::Music music;
-    music.openFromFile("../whats_the_use_of_getting_sober.mp3");
+    music.openFromFile("/home/nomis/Musique/Imagine Dragons - Night Visions (2012) - FLAC/01 - Radioactive.flac");
+    music.play();
+    while(1){}
     return EXIT_SUCCESS;
 }
