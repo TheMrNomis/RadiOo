@@ -8,5 +8,10 @@ int main(int argc, const char* argv[])
     sf::Music music;
     if(!music.openFromFile(argv[1]))
         return EXIT_FAILURE;
+    music.play();
+    sf::Time t = music.getDuration();
+    sf::Clock c;
+    while(c.getElapsedTime() < t)
+    {}
     return EXIT_SUCCESS;
 }
