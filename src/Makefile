@@ -1,8 +1,6 @@
-# g++ -std=c++0x main.cpp -o ../RadiOo.out -L/home/nomis/sfml/lib -lsfml-audio
-
 CC=g++
 CFLAGS=-std=c++0x
-CLIBS=-L/usr/lib/sfml/lib -lsfml-audio
+CLIBS=-L/usr/lib/sfml/lib -lsfml-audio -lFLAC++
 SRC=main.cpp
 OBJ=$(SRC:.cpp=.o)
 EXEC=../RadiOo.out
