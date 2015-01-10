@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Audio.hpp>
 #include <FLAC++/metadata.h>
+#include "SongInfo.hpp"
 
 int main(int argc, const char* argv[])
 {
@@ -11,13 +12,9 @@ int main(int argc, const char* argv[])
         return EXIT_FAILURE;
 
     //metadatas
-    FLAC::Metadata::VorbisComment vorbisComment;
-    FLAC::Metadata::get_tags(argv[1], vorbisComment);
-
-//	FLAC::Metadata::VorbisComment::Entry e;
-
-	for(int i = 0; i < vorbisComment.get_num_comments(); i++)
-        std::cout<<vorbisComment.get_comment(i).get_field()<<std::endl;
+    SongInfo si(argv[1]);
+    std::cout << si.getArtist() << std::endl;
+    std::cout << si.getTitle() << std::endl;
 
     music.play();
     sf::Time t = music.getDuration();
