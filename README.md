@@ -5,6 +5,6 @@ RadiOo is a radio emulating software. It plays music and generates its own speec
 
 Prerequisites
 -------------
-* MaryTTS (text-to-speech)
+* MaryTTS & maryspeak (text-to-speech)
 * SFML (audio player)
 * libflac++
