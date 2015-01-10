@@ -2,24 +2,24 @@
 #include <SFML/Audio.hpp>
 #include <FLAC++/metadata.h>
 #include "SongInfo.hpp"
+#include "AudioSample.hpp"
+#include "MusicSample.hpp"
 
 int main(int argc, const char* argv[])
 {
     if(argc < 2)
         return EXIT_FAILURE;
-    sf::Music music;
-    if(!music.openFromFile(argv[1]))
-        return EXIT_FAILURE;
+
+    //music
+    MusicSample m(argv[1]);
 
     //metadatas
-    SongInfo si(argv[1]);
-    std::cout << si.getArtist() << std::endl;
-    std::cout << si.getTitle() << std::endl;
+    std::cout << m.getArtist() << std::endl;
+    std::cout << m.getTitle() << std::endl;
 
-    music.play();
-    sf::Time t = music.getDuration();
+    m.play();
     sf::Clock c;
-    while(c.getElapsedTime() < t)
+    while(c.getElapsedTime().asSeconds() < m.length())
     {}
     return EXIT_SUCCESS;
 }

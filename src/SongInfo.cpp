@@ -2,6 +2,16 @@
 
 SongInfo::SongInfo(const char* fileName)
 {
+    initialize(fileName);
+}
+
+SongInfo::SongInfo(std::string fileName)
+{
+    initialize(fileName.c_str());
+}
+
+void SongInfo::initialize(const char* fileName)
+{
     FLAC::Metadata::VorbisComment vorbisComment;
     FLAC::Metadata::get_tags(fileName, vorbisComment);
 

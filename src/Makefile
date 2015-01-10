@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-std=c++0x
 CLIBS=-L/usr/lib/sfml/lib -lsfml-audio -lFLAC++
-SRC=main.cpp SongInfo.cpp
+SRC=main.cpp SongInfo.cpp AudioSample.cpp MusicSample.cpp
 OBJ=$(SRC:.cpp=.o)
 EXEC=../RadiOo.out
 
